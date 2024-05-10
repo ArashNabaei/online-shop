@@ -5,7 +5,7 @@
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public DateTime OrderDate { get; set; }
-        public enum OredrStatus
+        public enum OrderStatus
         {
             Pending,
             Shipped,
