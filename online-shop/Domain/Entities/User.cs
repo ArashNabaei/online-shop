@@ -12,5 +12,6 @@
         public string Phone { get; set; }
         public DateTime RegsitrationDate { get; set; }
         public int RoleId { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }

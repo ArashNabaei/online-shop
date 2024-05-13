@@ -12,5 +12,6 @@ namespace Domain.Entities
         public float Rating { get; set; }
         public string Comment { get; set; }
         public DateTime ReviewDate { get; set; }
+        public User User { get; set; }
     }
 }
