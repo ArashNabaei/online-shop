@@ -16,5 +16,6 @@
         public double TotalPrice { get; set; }
         public string ShippingAddress { get; set; }
         public Cart Cart { get; set; }
+        public User User { get; set; }
     }
 }

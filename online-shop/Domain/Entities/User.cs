@@ -15,5 +15,6 @@
         public ICollection<Review> Reviews { get; set; }
         public Role Role { get; set; }
         public Cart Cart { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

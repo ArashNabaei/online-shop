@@ -92,6 +92,15 @@ namespace Infrastructure
                 .WithOne(c => c.Order)
                 .HasForeignKey<Cart>(c => c.OrderId);
 
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.User)
+                .WithMany(u => u.Orders)
+                .HasForeignKey(o => o.UserId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Orders)
+                .WithOne(o => o.User)
+                .HasForeignKey(o => o.UserId);
         }
     }
 }
