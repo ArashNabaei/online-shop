@@ -13,5 +13,6 @@ namespace Domain.Entities
         public Guid OrderId { get; set; }
         public int Quantity { get; set; }
         public DateTime AddedTime { get; set; }
+        public User User { get; set; }
     }
 }

@@ -58,6 +58,16 @@ namespace Infrastructure
                 .HasOne(r => r.User)
                 .WithOne(u => u.Role)
                 .HasForeignKey<User>(u => u.RoleId);
+
+            modelBuilder.Entity<Cart>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.Carts)
+                .HasForeignKey(c => c.UserId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Carts)
+                .WithOne(c => c.User)
+                .HasForeignKey(c => c.UserId);
         }
     }
 }

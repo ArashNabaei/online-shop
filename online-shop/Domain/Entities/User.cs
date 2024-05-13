@@ -14,5 +14,6 @@
         public Guid RoleId { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public Role Role { get; set; }
+        public ICollection<Cart> Carts { get; set; }
     }
 }
