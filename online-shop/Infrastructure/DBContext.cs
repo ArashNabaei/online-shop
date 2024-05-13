@@ -49,7 +49,15 @@ namespace Infrastructure
                 .WithOne(r => r.Product)
                 .HasForeignKey(r => r.ProductId);
 
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Role)
+                .WithOne(r => r.User)
+                .HasForeignKey<User>(u => u.RoleId);
 
+            modelBuilder.Entity<Role>()
+                .HasOne(r => r.User)
+                .WithOne(u => u.Role)
+                .HasForeignKey<User>(u => u.RoleId);
         }
     }
 }
