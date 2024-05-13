@@ -13,5 +13,6 @@ namespace Domain.Entities
         public string Comment { get; set; }
         public DateTime ReviewDate { get; set; }
         public User User { get; set; }
+        public Product Product { get; set; }
     }
 }

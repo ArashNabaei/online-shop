@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
@@ -16,5 +17,6 @@ namespace Domain.Entities
         public string ImageUrl { get; set; }
 
         public Category Category { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }
