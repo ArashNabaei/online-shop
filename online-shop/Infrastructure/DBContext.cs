@@ -24,6 +24,11 @@ namespace Infrastructure
                 .HasOne(p => p.Category)
                 .WithMany(c => c.Products)
                 .HasForeignKey(p => p.CategoryId);
+
+            modelBuilder.Entity<Category>()
+            .HasMany(c => c.Products)
+            .WithOne(p => p.Category)
+            .HasForeignKey(p => p.CategoryId);
         }
     }
 }
