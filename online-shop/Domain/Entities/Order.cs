@@ -15,5 +15,6 @@
         public OrderStatus Status { get; set; }
         public double TotalPrice { get; set; }
         public string ShippingAddress { get; set; }
+        public Cart Cart { get; set; }
     }
 }

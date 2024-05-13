@@ -81,6 +81,17 @@ namespace Infrastructure
                 .HasOne(ci => ci.Cart)
                 .WithMany(c => c.CartItems)
                 .HasForeignKey(ci => ci.CartId);
+
+            modelBuilder.Entity<Cart>()
+                .HasOne(c => c.Order)
+                .WithOne(o => o.Cart)
+                .HasForeignKey<Cart>(c => c.OrderId);
+
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.Cart)
+                .WithOne(c => c.Order)
+                .HasForeignKey<Cart>(c => c.OrderId);
+
         }
     }
 }
