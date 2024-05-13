@@ -14,5 +14,6 @@ namespace Domain.Entities
         public int Quantity { get; set; }
         public DateTime AddedTime { get; set; }
         public User User { get; set; }
+        public ICollection<CartItem> CartItems { get; set; }
     }
 }
