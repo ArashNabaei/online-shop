@@ -69,18 +69,18 @@ namespace Infrastructure
                 .WithOne(c => c.User)
                 .HasForeignKey<Cart>(c => c.UserId);
 
-            //modelBuilder.Entity<CartItem>()
-            //    .HasKey(ci => new { ci.ProductId, ci.CartId }); // Define composite primary key
+            modelBuilder.Entity<CartItem>()
+                .HasKey(ci => new { ci.ProductId, ci.CartId });
 
-            //modelBuilder.Entity<CartItem>()
-            //    .HasOne(ci => ci.Product)
-            //    .WithMany(p => p.CartItems)
-            //    .HasForeignKey(ci => ci.ProductId);
+            modelBuilder.Entity<CartItem>()
+                .HasOne(ci => ci.Product)
+                .WithMany(p => p.CartItems)
+                .HasForeignKey(ci => ci.ProductId);
 
-            //modelBuilder.Entity<CartItem>()
-            //    .HasOne(ci => ci.Cart)
-            //    .WithMany(c => c.CartItems)
-            //    .HasForeignKey(ci => ci.CartId);
+            modelBuilder.Entity<CartItem>()
+                .HasOne(ci => ci.Cart)
+                .WithMany(c => c.CartItems)
+                .HasForeignKey(ci => ci.CartId);
         }
     }
 }
