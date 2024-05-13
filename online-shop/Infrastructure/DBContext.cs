@@ -61,13 +61,13 @@ namespace Infrastructure
 
             modelBuilder.Entity<Cart>()
                 .HasOne(c => c.User)
-                .WithMany(u => u.Carts)
-                .HasForeignKey(c => c.UserId);
+                .WithOne(u => u.Cart)
+                .HasForeignKey<Cart>(c => c.UserId);
 
             modelBuilder.Entity<User>()
-                .HasMany(u => u.Carts)
+                .HasOne(u => u.Cart)
                 .WithOne(c => c.User)
-                .HasForeignKey(c => c.UserId);
+                .HasForeignKey<Cart>(c => c.UserId);
         }
     }
 }
