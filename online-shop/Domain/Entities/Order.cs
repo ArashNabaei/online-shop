@@ -1,8 +1,11 @@
-﻿namespace Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Entities
 {
     public class Order
     {
         public Guid Id { get; set; }
+        [ForeignKey("User")]
         public Guid UserId { get; set; }
         public DateTime OrderDate { get; set; }
         public enum OrderStatus

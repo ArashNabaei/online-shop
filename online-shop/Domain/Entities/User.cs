@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Entities
 {
     public class User
     {
@@ -11,6 +13,7 @@
         public string Address { get; set; }
         public string Phone { get; set; }
         public DateTime RegsitrationDate { get; set; }
+        [ForeignKey("Role")]
         public Guid RoleId { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public Role Role { get; set; }
