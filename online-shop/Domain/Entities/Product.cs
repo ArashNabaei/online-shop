@@ -15,5 +15,6 @@ namespace Domain.Entities
         public DateTime CreationDate { get; set; }
         public string ImageUrl { get; set; }
 
+        public Category Category { get; set; }
     }
 }
