@@ -63,7 +63,8 @@ namespace Infrastructure
             modelBuilder.Entity<Cart>()
                 .HasOne(c => c.User)
                 .WithOne(u => u.Cart)
-                .HasForeignKey<Cart>(c => c.UserId);
+                .HasForeignKey<Cart>(c => c.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Cart)
